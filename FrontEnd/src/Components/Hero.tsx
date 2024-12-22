@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 // import { ContentSearch } from "../components/ContentSearch";
 import { motion } from "framer-motion";
 // import { Spotlight } from "@repo/ui";
@@ -7,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
+  const navigate = useNavigate()
   const handleMouseMove = (event: MouseEvent) => {
     const { clientX, clientY } = event;
     setMousePosition({ x: clientX, y: clientY });
@@ -166,6 +167,9 @@ export default function Hero() {
         <p className="text-primary/80 max-w-lg text-center tracking-tight md:text-lg font-light">
           A platform where you'll find the right content to help you improve your skills and grow your knowledge.
         </p>
+        <button className="bg-white hover:bg-gray-300 text-black font-semibold py-2 px-4 rounded" onClick={() => {
+                            navigate("/home");
+                        }}> Start Reading </button>
       </motion.div>
     </div>
   );
