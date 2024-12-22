@@ -2,7 +2,7 @@ import express from 'express' ;
 import mongoose from 'mongoose';
 import cors from 'cors' ; 
 // const database_url = process.env.MONGO_API_KEY || 'fallback_database_url'
-const database_url = "mongodb+srv://ayushsanjayrawal:sSl8nGjVuWdQBprk@cluster0.fgu9moe.mongodb.net/"
+const database_url = ""
 import authRoutes from "./routes/auth" ;
 import blogRoutes from './routes/blog'
 const app = express() ; 
