@@ -13,9 +13,7 @@ const BlogCard = ({ title, summary, imageUrl, publishDate, chaptersCount }: Blog
         <div className='flex justify-center mb-5'>
            
                 <motion.a
-                whileHover={{ scale: 1.02 }}
-                onHoverStart={event => { }}
-                onHoverEnd={event => { }}>
+                whileHover={{ scale: 1.02 }}>
                 <div className='flex justify-center'>
                 <div className="w-3/5  transition-all duration-300 justify-center">
                     
