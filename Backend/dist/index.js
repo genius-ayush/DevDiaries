@@ -9,7 +9,6 @@ const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const database_url = process.env.MONGO_API_KEY || 'fallback_database_url';
-console.log(database_url);
 const auth_1 = __importDefault(require("./routes/auth"));
 const blog_1 = __importDefault(require("./routes/blog"));
 const app = (0, express_1.default)();
