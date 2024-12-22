@@ -2,7 +2,11 @@
 
 A comprehensive blog platform with a robust backend and an interactive frontend, designed to handle secure user authentication, dynamic blog management, and responsive user interactions.
 
-https://github.com/user-attachments/assets/26933226-a405-4846-9914-2e32813408e4
+
+
+https://github.com/user-attachments/assets/0a88dee6-95cc-407e-a76c-7f226b4b9f99
+
+
 
 ---
 
