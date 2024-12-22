@@ -4,7 +4,6 @@ import cors from 'cors' ;
 import dotenv from 'dotenv';
 dotenv.config();
 const database_url = process.env.MONGO_API_KEY || 'fallback_database_url'
-console.log(database_url) ; 
 import authRoutes from "./routes/auth" ;
 import blogRoutes from './routes/blog'
 const app = express() ; 
