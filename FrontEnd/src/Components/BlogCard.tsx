@@ -6,18 +6,20 @@ interface BlogCardProps {
     imageUrl?: string;
     publishDate: string;
     chaptersCount?: number;
+    onClick: () => void;
+    onDelete ?: () => void;
 }
 
-const BlogCard = ({ title, summary, imageUrl, publishDate, chaptersCount }: BlogCardProps) => {
+const BlogCard = ({ title, summary, imageUrl, publishDate , onClick , onDelete}: BlogCardProps) => {
     return (
-        <div className='flex justify-center mb-5'>
+        <div className='flex justify-center mb-5' onClick={onClick}>
            
                 <motion.a
                 whileHover={{ scale: 1.02 }}>
                 <div className='flex justify-center'>
                 <div className="w-3/5  transition-all duration-300 justify-center">
                     
-                    <div className="flex items-center  gap-6 p-4 rounded-lg border-gray-700 border-[0.1px] text-white h-64">
+                    <div className="flex items-center  gap-6 p-4 rounded-lg border-gray-700 border-[0.1px] text-white h-64" >
                         {/* Image Container */}
                         <div className="flex-shrink-0">
                             <div className="w-44 h-44 overflow-hidden rounded-lg">
@@ -36,18 +38,24 @@ const BlogCard = ({ title, summary, imageUrl, publishDate, chaptersCount }: Blog
                                 <p className="text-gray-400 text-base mb-3 line-clamp-2">{summary}</p>
                             )}
                         </div>
+                        
 
                         {/* Right Side Info */}
                         <div className="flex-shrink-0 text-right">
-                            {chaptersCount && (
+                            {/* {chaptersCount && (
                                 <div className="text-base font-medium mb-2">
                                     {chaptersCount} Chapters
                                 </div>
-                            )}
+                            )} */}
+                            
                             <div className="text-base text-gray-400">
                                 {publishDate}
                             </div>
+                            
                         </div>
+                        { onDelete &&(
+                                <button onClick={onDelete} className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Delete</button>
+                            )}
                     </div>
                     
                 </div>

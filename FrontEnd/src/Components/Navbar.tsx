@@ -44,7 +44,7 @@ function Navbar() {
                 transition={{ duration: 0.5, ease: "easeInOut", type: "spring", damping: 10 }}
                 className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg  border-gray-700 border-[0.1px] p-6 rounded-2xl">
                 <div className="flex items-center gap-2 cursor-pointer" onClick={() => {
-                    navigate("/home");
+                    navigate("/");
                 }}>
                     <NotebookText className='text-white ' />
 

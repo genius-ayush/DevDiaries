@@ -15,7 +15,7 @@ function MyBlogs() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const userId = localStorage.getItem("userId"); // Assuming userId is stored in localStorage
+  const userId = localStorage.getItem("userId"); 
 
   useEffect(() => {
     const fetchUserBlogs = async () => {
@@ -69,7 +69,7 @@ function MyBlogs() {
   }
 
   return (
-    <div className="min-h-screen py-8 px-4 bg-gradient-to-b from-gray-900 via-black to-gray-900 text-gray-200">
+    <div className="min-h-screen py-8 px-4  text-gray-200">
       <h1 className="text-3xl text-center font-bold mb-6">My Blogs</h1>
       {blogs.length === 0 ? (
         <p className="text-gray-400">You have not written any blogs yet.</p>

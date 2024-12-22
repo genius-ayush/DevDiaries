@@ -37,7 +37,7 @@ function Body() {
 
   return (
     
-    <div className="mb-48">
+    <div className="">
       {blogPosts.map((post) => (
         <BlogCard
         onClick={() => navigate(`/blog/${post._id}`)}

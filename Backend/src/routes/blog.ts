@@ -61,7 +61,7 @@ router.get('/posts/:id', async (req: Request<{ id: string }>, res: Response) => 
 });
 
 //@ts-ignore
-router.delete('/posts/:id', authenticateJwt, async (req: Request, res: Response) => {
+router.delete('/posts/:id', async (req: Request, res: Response) => {
 
     try {
         const post = await Post.findById(req.params.id);

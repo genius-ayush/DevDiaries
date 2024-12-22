@@ -8,6 +8,8 @@ import Register from './Components/Register';
 import Login from './Components/Login';
 import CreateBlog from './Components/CreateBlog';
 import MyBlogs from './Components/MyBlogs';
+import BlogDetail from './Components/BlogDetail';
+import Hero from './Components/Hero';
 
 function App() {
 
@@ -18,13 +20,13 @@ function App() {
       <Navbar />
         
         <Routes>
-        <Route path='/' element={<Body />} />
+        <Route path='/' element={<Hero />} />
         <Route path='/home' element={<Body />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/create' element={<CreateBlog/>} />
         <Route path='/myBlogs' element={<MyBlogs/>} />
-        
+        <Route path="/blog/:id" element={<BlogDetail />} />
         </Routes>
       <Footer/>
       </Router>

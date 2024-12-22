@@ -22,7 +22,8 @@ function Login() {
 
       if (data && data.token) {
         localStorage.setItem('token', data.token);
-        navigate('/landing');
+        localStorage.setItem("userId" , data.userId) ; 
+        navigate('/home');
         window.location.reload();
       }
     } catch (err) {
