@@ -13,11 +13,13 @@ const BlogCard = ({ title, summary, imageUrl, publishDate, chaptersCount }: Blog
         <div className='flex justify-center mb-5'>
            
                 <motion.a
-                whileHover={{ scale: 1.02 }}>
+                whileHover={{ scale: 1.02 }}
+                onHoverStart={event => { }}
+                onHoverEnd={event => { }}>
                 <div className='flex justify-center'>
-                <div className="w-4/5  transition-all duration-300 justify-center">
+                <div className="w-3/5  transition-all duration-300 justify-center">
                     
-                    <div className="flex items-center  gap-6 p-4 rounded-lg  text-white h-64 border-gray-800 border-[0.1px]">
+                    <div className="flex items-center  gap-6 p-4 rounded-lg border-gray-700 border-[0.1px] text-white h-64">
                         {/* Image Container */}
                         <div className="flex-shrink-0">
                             <div className="w-44 h-44 overflow-hidden rounded-lg">

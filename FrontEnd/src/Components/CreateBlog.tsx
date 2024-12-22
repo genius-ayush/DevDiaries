@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 
 const CreateBlog = () => {
   const [formData, setFormData] = useState({
@@ -7,7 +8,7 @@ const CreateBlog = () => {
     content: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
@@ -15,17 +16,44 @@ const CreateBlog = () => {
     }));
   };
 
-  const handleSubmit = (e: KeyboardEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Blog data:', formData);
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
+  
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/blog/posts",
+        {
+          title: formData.heading,
+          imgUrl: formData.imageUrl,
+          content: formData.content,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+  
+      const data = response.data;
+  
+      if (data) {
+        window.location.reload();
+      }
+    } catch (err: any) {
+      console.error("Error submitting blog post:", err.response ? err.response.data : err.message);
+    }
+  
+    console.log("Blog data:", formData);
   };
+  
 
   return (
     <div className="min-h-screen  py-8 px-4">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-8 text-center">Create New Blog</h1>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="heading" className="block text-white text-lg font-medium mb-2">

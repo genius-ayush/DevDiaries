@@ -1,15 +1,16 @@
 import mongoose from "mongoose"
 
 export const userSchema = new mongoose.Schema({
-    username : {type: String , required:true } , 
-    email: {type: String , required: true , unique: true} , 
-    password:{type: String , required:true} , 
+    name : String , 
+    email: String , 
+    password: String , 
 } , {timestamps:true})
 
 
 export const postSchema = new mongoose.Schema({
-    title:{title: String , required:true} , 
-    content:{type:String , required: true} , 
+    title:{type: String } , 
+    imgUrl:{type:String} , 
+    content:{type:String } , 
     summary:{type: String} , 
     author:{type: mongoose.Schema.Types.ObjectId , ref:'User' , required:true} , 
 } , {timestamps:true})

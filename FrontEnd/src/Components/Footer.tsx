@@ -5,8 +5,8 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="  text-white py-10 border-gray-700 border-t-[0.1px]">
-      <div className="container mx-auto flex flex-wrap justify-between items-start px-4 w-2/3">
+    <footer className=" text-white py-10 border-gray-700 border-t-[0.1px] left-0 w-full ">
+      <div className="container mx-auto flex flex-wrap justify-between items-start px-4 w-2/3 ">
         {/* Brand Section */}
 
         <div className="mb-6 md:mb-0">

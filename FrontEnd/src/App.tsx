@@ -16,6 +16,7 @@ function App() {
       
       <Router>
       <Navbar />
+        
         <Routes>
         <Route path='/' element={<Body />} />
         <Route path='/home' element={<Body />} />
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/create' element={<CreateBlog/>} />
         <Route path='/myBlogs' element={<MyBlogs/>} />
+        
         </Routes>
       <Footer/>
       </Router>

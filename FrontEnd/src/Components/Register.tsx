@@ -14,7 +14,8 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', {
+      const response = await axios.post('http://localhost:3000/auth/register', {
+        
         name: name , 
         email: email,
         password: password,
@@ -24,8 +25,8 @@ function Login() {
 
       if (data && data.token) {
         localStorage.setItem('token', data.token);
-        navigate('/landing');
-        window.location.reload();
+        localStorage.setItem("userId" , data.userId) ; 
+        navigate('/home');
       }
     } catch (err) {
       setError('Login failed. Please try again.');
@@ -49,8 +50,8 @@ function Login() {
 
         <form className="space-y-6 mt-6" onSubmit={handleSubmit}>
 
-        <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-300">
               Name
             </label>
             <input
@@ -104,8 +105,8 @@ function Login() {
         </form>
         <p className="mt-10 text-center text-sm text-gray-400">
           Don’t have an account yet?{' '}
-          <a href="/register" className="font-semibold leading-6 text-blue-500 hover:text-blue-300">
-            Register
+          <a href="/login" className="font-semibold leading-6 text-blue-500 hover:text-blue-300">
+            Login
           </a>
         </p>
         {error && <p className="text-center text-red-500 mt-4">{error}</p>}
