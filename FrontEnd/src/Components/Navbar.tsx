@@ -13,7 +13,7 @@ function Navbar() {
     const fetchedData = async () => {
         try {
             if (token) {
-                const response = await axios.get("http://localhost:3000/auth/me", {
+                const response = await axios.get("https://dev-diaries-murex.vercel.app/auth/me", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     },

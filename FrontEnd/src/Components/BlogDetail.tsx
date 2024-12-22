@@ -24,7 +24,7 @@ function BlogDetail() {
     const fetchBlog = async () => {
       try {
         
-        const response = await axios.get<BlogDetailProps>(`http://localhost:3000/blog/posts/${id}`);
+        const response = await axios.get<BlogDetailProps>(`https://dev-diaries-murex.vercel.app/blog/posts/${id}`);
         setBlog(response.data);
       } catch (error) {
         console.error("Error fetching blog details:", error);

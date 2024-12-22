@@ -27,7 +27,7 @@ function MyBlogs() {
         }
 
         const response = await axios.get<BlogPost[]>(
-          `http://localhost:3000/blog/users/${userId}/posts`
+          `https://dev-diaries-murex.vercel.app/blog/users/${userId}/posts`
         );
 
         setBlogs(response.data);
@@ -44,7 +44,7 @@ function MyBlogs() {
 
   const handleDelete = async (postId: string) => {
     try {
-      await axios.delete(`http://localhost:3000/blog/posts/${postId}`);
+      await axios.delete(`https://dev-diaries-murex.vercel.app/blog/posts/${postId}`);
       // Update state to remove deleted post
       setBlogs(blogs.filter((blog) => blog._id !== postId));
     } catch (err) {

@@ -23,7 +23,7 @@ const CreateBlog = () => {
   
     try {
       const response = await axios.post(
-        "http://localhost:3000/blog/posts",
+        "https://dev-diaries-murex.vercel.app/blog/posts",
         {
           title: formData.heading,
           imgUrl: formData.imageUrl,

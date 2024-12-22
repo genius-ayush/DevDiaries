@@ -25,7 +25,7 @@ function Body() {
     // Fetch blog posts from the backend
     const fetchBlogPosts = async () => {
       try {
-        const response = await axios.get<BlogPost[]>("http://localhost:3000/blog/posts");
+        const response = await axios.get<BlogPost[]>("https://dev-diaries-murex.vercel.app/blog/posts");
         setBlogPosts(response.data); // Set the blog posts data
       } catch (error) {
         console.error("Error fetching blog posts:", error);

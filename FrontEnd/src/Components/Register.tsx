@@ -14,7 +14,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/register', {
+      const response = await axios.post('https://dev-diaries-murex.vercel.app/auth/register', {
         
         name: name , 
         email: email,
